@@ -1,6 +1,6 @@
-# 🏥 Machine Learning Based Disease Prediction System
+# 🏥 Machine Learning-Based Disease Prediction System
 
-A comprehensive system that predicts diseases based on user symptoms using machine learning classification algorithms. This project aims to provide a preliminary diagnostic tool that can assist healthcare professionals and patients in early disease identification.
+A robust Django-based application that predicts diseases based on user-reported symptoms using machine learning classification algorithms. This system aims to assist healthcare professionals and patients in early disease detection.
 
 ---
 
@@ -10,13 +10,11 @@ A comprehensive system that predicts diseases based on user symptoms using machi
 * [Features](#features)
 * [Dataset](#dataset)
 * [Technologies Used](#technologies-used)
-* [Project Structure](#project-structure)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Model Evaluation](#model-evaluation)
 * [Future Enhancements](#future-enhancements)
 * [Contributing](#contributing)
-* [License](#license)
 
 ---
 
@@ -28,106 +26,122 @@ The Disease Prediction System leverages multiple machine learning classifiers (l
 
 ## ✨ Features
 
-* **Symptom-based Disease Prediction:** Input user symptoms via the interface and receive predicted diseases.
-* **Multiple Classifiers:** Implements and compares different machine learning models for improved accuracy.
-* **Data Visualization:** Visualizes symptom and disease distributions for better insight.
-* **User-Friendly Interface:** Interactive UI for symptom input and result display.
-* **Model Evaluation:** Includes metrics like accuracy, precision, recall to evaluate model performance.
+* **Symptom-based Disease Prediction:** Input symptoms via the web interface and receive the predicted disease.
+* **Multiple Classifiers:** Utilizes various machine learning models for higher prediction accuracy.
+* **Data Storage:** Uses SQLite3 as the backend database to store symptom data and predictions.
+* **User-Friendly Interface:** An intuitive and interactive UI built using Django for seamless interaction.
+* **Model Evaluation:** Comprehensive performance metrics, including accuracy, precision, and recall.
 
 ---
 
 ## 📊 Dataset
 
-The dataset comprises symptom-disease mappings collected from reliable medical sources and consists of:
+The dataset consists of symptom-disease mappings collected from reliable medical sources. The data structure includes:
 
-* A list of symptoms (binary presence/absence per patient)
-* Corresponding disease labels
+* **Symptoms:** Binary representation (presence/absence) for each patient.
+* **Disease Labels:** The corresponding disease associated with the symptom set.
 
-The dataset is preprocessed to handle missing values and convert categorical data for model training.
+The data has been preprocessed to manage missing values and convert categorical data for model training.
 
 ---
 
 ## 🛠️ Technologies Used
 
-* Python 3.x
-* Machine Learning Libraries: scikit-learn, pandas, numpy
-* Data Visualization: matplotlib, seaborn
-* Web Framework: Flask (if applicable)
-* Others: Jupyter Notebook for EDA and experimentation
-
----
-
-## 🗂️ Project Structure
-
-```
-├── data/
-│   └── disease_symptom_dataset.csv
-├── notebooks/
-│   └── exploratory_data_analysis.ipynb
-├── src/
-│   ├── data_preprocessing.py
-│   ├── model_training.py
-│   └── prediction.py
-├── app.py (if exists)
-├── requirements.txt
-└── README.md
-```
+* **Backend:** Django, SQLite3
+* **Machine Learning Libraries:** scikit-learn, pandas, numpy
+* **Frontend:** HTML, CSS, Bootstrap
+* **Deployment:** Django's development server
+* **Others:** Python 3.x for scripting and backend logic
 
 ---
 
 ## 💻 Installation
 
-1. Clone the repository:
+1. **Clone the repository:**
 
 ```bash
 git clone https://github.com/dev28616/Machine-Learning-Based-Disease-Prediction-System.git
 cd Machine-Learning-Based-Disease-Prediction-System
 ```
 
-2. Create and activate a virtual environment:
+2. **Create and activate a virtual environment:**
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. Install dependencies:
+3. **Install dependencies:**
 
 ```bash
 pip install -r requirements.txt
+```
+
+4. **Run migrations to set up the database:**
+
+```bash
+python manage.py migrate
+```
+
+5. **Create a superuser to access the Django admin panel:**
+
+```bash
+python manage.py createsuperuser
+```
+
+6. **Start the Django development server:**
+
+```bash
+python manage.py runserver
+```
+
+7. **Access the application:**
+
+Open your browser and navigate to:
+
+```
+http://127.0.0.1:8000/
+```
+
+8. **Admin Panel Access:**
+   Login to the admin interface using the superuser credentials:
+
+```
+http://127.0.0.1:8000/admin/
 ```
 
 ---
 
 ## 🚀 Usage
 
-* Run model training scripts to train or retrain the classifiers.
-* Use the prediction script or web interface to input symptoms and get predicted diseases.
-* Visualize model performance and EDA results in the notebooks.
+* **Disease Prediction:** Enter your symptoms through the UI and receive predictions instantly.
+* **Admin Management:** Use the Django admin panel to manage users, data, and logs.
+* **Data Persistence:** All predictions and inputs are stored securely in the SQLite3 database.
 
 ---
 
 ## 📈 Model Evaluation
 
-The project evaluates multiple classifiers based on metrics such as accuracy, precision, recall, and F1-score. Performance comparison guides the selection of the best model for deployment.
+The project incorporates various machine learning classifiers to predict diseases accurately. Models are evaluated based on:
+
+* **Accuracy:** Proportion of correct predictions.
+* **Precision:** Ratio of correctly predicted positive observations.
+* **Recall:** Ratio of correctly predicted actual positives.
+* **F1-Score:** Harmonic mean of precision and recall.
+
+These metrics ensure the model's reliability and robustness when deployed.
 
 ---
 
 ## 🔮 Future Enhancements
 
-* Integration with a web or mobile app for wider accessibility.
-* Inclusion of more diseases and symptoms to improve prediction scope.
-* Deployment with REST APIs for scalable access.
-* Incorporate deep learning models for enhanced accuracy.
+* **Model Optimization:** Integrate hyperparameter tuning for improved accuracy.
+* **API Integration:** Expose predictions through a RESTful API for external applications.
+* **Enhanced Frontend:** Improve the UI for better user engagement and interactivity.
+* **Database Expansion:** Support for additional diseases and more comprehensive symptom sets.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please fork the repo and open pull requests with your improvements or bug fixes.
-
----
-
-*For any questions or issues, please open an issue or contact the maintainer.*
-
-
+Contributions are welcome! Please fork the repository and open a pull request to suggest improvements or bug fixes.
